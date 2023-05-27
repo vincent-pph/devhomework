@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="UTF-8">
+        <title>Homework #1</title>
+        <style>
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+li:last-child {
+  border-right: none;
+}
+.image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-description {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .image-description img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .image-details {
+            flex-grow: 1;
+        }
+        .search-container {
+            text-align: right;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .search-container input[type=text] {
+            padding: 6px;
+            border: none;
+            width: 200px;
+        } 
+        .search-container button {
+            padding: 6px 10px;
+            background: #ccc;
+            border: none;
+            cursor: pointer;
+        }    
+        </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="skill.html">Skill</a></li>
+            <li><a href="contact.html">Contact Me</a> </li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+          </ul>
+    </nav>
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button type="submit">Search</button>
+  </div>
+  <div class="image-gallery">
+    <div class="image-description">
+        <img src="path_to_image1.jpg" alt="Image 1">
+        <div class="image-details">
+            <h3>Description for Image 1</h3>
+            <p>Details for Image 1</p>
+        </div>
+    </div>
+    <div class="image-description">
+        <img src="path_to_image2.jpg" alt="Image 2">
+        <div class="image-details">
+            <h3>Description for Image 2</h3>
+            <p>Details for Image 2</p>
+        </div>
+    </div>
+   
+</div>  
+
+</body>
+
+</html>
