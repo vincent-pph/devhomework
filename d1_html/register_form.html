@@ -7,8 +7,11 @@
     td {
         width: 150px;
     }
-</style>
-
+    .error {
+      color: red;
+    }
+  </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <body>
 <form action="" style="margin: auto; width: 500px">
     <fieldset>
@@ -41,11 +44,11 @@
             <tr>
                 <td>Birthday: </td>
                 <td>
-                    <select id='day'>
+                    <select id="date" name="date" required>
                     </select>
-                    <select id='month'>
+                    <select id="month" name="month" required>
                     </select>
-                    <select id='year'>
+                    <select id="year" name="year" required>
                     </select>
                 </td>
             </tr>
@@ -56,12 +59,47 @@
             <tr>
                 <td colspan=2>
                     <div style='margin: auto; width: 120px'>
-                        <input type='submit'> <input type='reset'>
+                        <input type="submit" value="Submit"> <input type='reset'>
                     </div>
                 </td>
             </tr>
         </table>
     </fieldset>
 </form>
+<script>
+
+
+  </script>
 </body>
 </html>
+
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      if (form.checkValidity()) {
+        alert('Form submitted successfully!');
+        // You can perform additional actions here, such as submitting the form via AJAX
+      } else {
+        // Show error messages
+        const errorMessages = form.querySelectorAll('.error');
+        errorMessages.forEach(function(errorMessage) {
+          errorMessage.style.display = 'none';
+        });
+        const invalidFields = form.querySelectorAll(':invalid');
+        invalidFields.forEach(function(field) {
+          const errorMessage = field.nextElementSibling;
+          errorMessage.style.display = 'block';
+        });
+      }
+    });
+    function createLotsOfOption(id, start, finish) {
+        let selectElement = $('#'+id);
+        for (let i = start; i <= finish; i++) {
+            selectElement.append($('<option>'+i+'</option>'));
+        }
+    }
+    createLotsOfOption('date', 1, 31);
+    createLotsOfOption('month', 1, 12);
+    createLotsOfOption('year', 1980, 2005);
+</script>
